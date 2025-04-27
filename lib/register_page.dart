@@ -194,3 +194,55 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ],
             ),
+            const SizedBox(height: 30),
+            SizedBox(
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF52FFBA),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () async {
+                  setState(() {
+                    namaError = namaController.text.isEmpty ? 'Nama lengkap tidak boleh kosong' : null;
+                    emailError = emailController.text.isEmpty ? 'Email tidak boleh kosong' : null;
+                    noHpError = noHpController.text.isEmpty ? 'No HP tidak boleh kosong' : null;
+                    passwordError = passwordController.text.isEmpty ? 'Password tidak boleh kosong' : null;
+                    confirmPasswordError = confirmPasswordController.text.isEmpty ? 'Konfirmasi password tidak boleh kosong' : null;
+                  });
+
+                  if (namaError != null ||
+                      emailError != null ||
+                      noHpError != null ||
+                      passwordError != null ||
+                      confirmPasswordError != null) {
+                    return;
+                  }
+
+                  if (passwordController.text != confirmPasswordController.text) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Password dan Konfirmasi Password tidak cocok')),
+                    );
+                    return;
+                  }
+
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.setString('nama', namaController.text);
+                  await prefs.setString('email', emailController.text);
+                  await prefs.setString('noHp', noHpController.text);
+                  await prefs.setString('password', passwordController.text);
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Registrasi berhasil, silahkan login')),
+                  );
+
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
+                child: const Text('Daftar', style: TextStyle(fontSize: 16)),
+              ),
+            ),
