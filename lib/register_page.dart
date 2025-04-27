@@ -67,3 +67,29 @@ class _RegisterPageState extends State<RegisterPage> {
                 errorText: namaError,
               ),
             ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('Email', style: TextStyle(fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 8),
+                      TextField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          hintText: 'Email',
+                          prefixIcon: const Icon(Icons.mail),
+                          filled: true,
+                          fillColor: Colors.white,
+                          contentPadding: const EdgeInsets.symmetric(vertical: 16),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          errorText: emailError,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
