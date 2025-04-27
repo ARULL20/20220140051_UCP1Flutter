@@ -93,3 +93,30 @@ class _RegisterPageState extends State<RegisterPage> {
                     ],
                   ),
                 ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('No HP', style: TextStyle(fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 8),
+                      TextField(
+                        controller: noHpController,
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          hintText: 'No HP',
+                          prefixIcon: const Icon(Icons.phone_android),
+                          filled: true,
+                          fillColor: Colors.white,
+                          contentPadding: const EdgeInsets.symmetric(vertical: 16),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          errorText: noHpError,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
