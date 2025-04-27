@@ -15,3 +15,12 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController noHpController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
+
+  String? namaError;
+  String? emailError;
+  String? noHpError;
+  String? passwordError;
+  String? confirmPasswordError;
+
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
