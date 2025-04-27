@@ -90,3 +90,21 @@ class _LoginPageState extends State<LoginPage> {
                     );
                   }
                 },
+                child: const Text('Masuk', style: TextStyle(fontSize: 16)),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RegisterPage()),
+                );
+              },
+              child: const Text('Belum Memiliki akun? Daftar disini!'),
+            ),
+            const Spacer(),
+          ],
+        ),
+      ),
+    );
+  }
