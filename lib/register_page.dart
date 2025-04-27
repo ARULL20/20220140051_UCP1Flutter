@@ -246,3 +246,19 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: const Text('Daftar', style: TextStyle(fontSize: 16)),
               ),
             ),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              },
+              child: const Text('Sudah memiliki akun? Silahkan Login disini!'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
