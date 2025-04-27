@@ -73,3 +73,20 @@ class _LoginPageState extends State<LoginPage> {
                   if (emailError != null || passwordError != null) {
                     return;
                   }
+
+                  final prefs = await SharedPreferences.getInstance();
+                  String? savedEmail = prefs.getString('email');
+                  String? savedPassword = prefs.getString('password');
+
+                  if (emailController.text == savedEmail &&
+                      passwordController.text == savedPassword) {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const DashboardPage()),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Email atau Password salah')),
+                    );
+                  }
+                },
