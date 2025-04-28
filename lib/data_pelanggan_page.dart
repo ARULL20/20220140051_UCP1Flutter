@@ -179,3 +179,47 @@ void resetForm() {
                 ),
               ),
               const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Provinsi'),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: provinsiController,
+                          decoration: InputDecoration(
+                            hintText: 'Provinsi',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            errorText: provinsiError,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Kode Pos'),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: kodePosController,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            hintText: 'Kode Pos',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            errorText: kodePosError,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
