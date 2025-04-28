@@ -11,3 +11,12 @@ class DashboardPage extends StatefulWidget {
   @override
   State<DashboardPage> createState() => _DashboardPageState();
 }
+
+class _DashboardPageState extends State<DashboardPage> {
+  String namaUser = 'Admin';
+
+  @override
+  void initState() {
+    super.initState();
+    loadUserData();
+  }
