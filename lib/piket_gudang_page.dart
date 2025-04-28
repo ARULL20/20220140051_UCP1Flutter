@@ -125,3 +125,18 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                       ),
                     ),
                   ),
+                  const SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: primaryColor,
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    onPressed: tambahTugas,
+                    child: const Text('Tambah'),
+                  ),
+                ],
+              ),
