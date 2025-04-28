@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'detail_pelanggan_page.dart'; // <--- Tambahkan import halaman detail di sini
+import 'detail_pelanggan_page.dart'; 
 
 class DataPelangganPage extends StatefulWidget {
   const DataPelangganPage({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
         alamatError == null &&
         provinsiError == null &&
         kodePosError == null) {
-      // Kalau validasi semua sukses, langsung pindah ke halaman Detail
+      
       Navigator.push(
         context,
         MaterialPageRoute(

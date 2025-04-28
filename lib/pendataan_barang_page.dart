@@ -22,6 +22,7 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
   String? jenisTransaksiError;
   String? jenisBarangError;
   String? jumlahBarangError;
+  String? hargaSatuanError;
 
   Map<String, int> hargaBarang = {
     'Carrier': 540000,
@@ -68,13 +69,17 @@ void validateForm() {
       jenisTransaksiError = selectedJenisTransaksi == null ? 'Pilih jenis transaksi' : null;
       jenisBarangError = selectedJenisBarang == null ? 'Pilih jenis barang' : null;
       jumlahBarangError = jumlahBarangController.text.isEmpty ? 'Jumlah barang tidak boleh kosong' : null;
+      hargaSatuanError = (hargaSatuanController.text.isEmpty || hargaSatuanController.text == '0')
+      ? 'Harga satuan tidak valid'
+      : null;
     });
 
  if (tanggalError == null &&
         jenisTransaksiError == null &&
         jenisBarangError == null &&
-        jumlahBarangError == null) {
-      // Semua valid, langsung ke halaman detail sukses
+        jumlahBarangError == null&&
+        hargaSatuanError == null) {
+      
       int hargaPerItem = hargaBarang[selectedJenisBarang!] ?? 0;
       int jumlah = int.tryParse(jumlahBarangController.text) ?? 1;
       int totalHarga = hargaPerItem * jumlah;
@@ -226,6 +231,7 @@ void validateForm() {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
+                            errorText: hargaSatuanError,
                           ),
                           readOnly: true,
                         ),

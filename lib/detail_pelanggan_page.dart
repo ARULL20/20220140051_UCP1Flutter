@@ -39,7 +39,7 @@ class DetailPelangganPage extends StatelessWidget {
             const SizedBox(height: 16),
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/profil2.jpg'), // ganti sesuai asset kamu
+              backgroundImage: AssetImage('assets/profil2.jpg'), 
             ),
             const SizedBox(height: 16),
             Text(
