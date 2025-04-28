@@ -108,3 +108,20 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                   ),
                 ),
               ),
+              const SizedBox(height: 16),
+              const Text('Tugas Piket'),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: tugasController,
+                      decoration: InputDecoration(
+                        hintText: 'Tugas Piket',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        errorText: tugasError,
+                      ),
+                    ),
+                  ),
