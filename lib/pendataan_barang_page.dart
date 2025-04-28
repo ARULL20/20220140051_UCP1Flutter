@@ -211,3 +211,26 @@ void validateForm() {
                       ],
                     ),
                   ),
+                   const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Harga Total'),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: hargaSatuanController,
+                          decoration: InputDecoration(
+                            prefixText: 'Rp. ',
+                            hintText: 'Harga Satuan',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
+                          readOnly: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
