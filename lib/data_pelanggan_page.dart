@@ -24,3 +24,36 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
   String? kodePosError;
 
   final primaryColor = Color.fromARGB(255, 3, 183, 219);
+
+  void validateForm() {
+    setState(() {
+      namaError = namaController.text.isEmpty ? 'Nama tidak boleh kosong' : null;
+      emailError = emailController.text.isEmpty ? 'Email tidak boleh kosong' : null;
+      noHpError = noHpController.text.isEmpty ? 'No Hp tidak boleh kosong' : null;
+      alamatError = alamatController.text.isEmpty ? 'Alamat tidak boleh kosong' : null;
+      provinsiError = provinsiController.text.isEmpty ? 'Provinsi tidak boleh kosong' : null;
+      kodePosError = kodePosController.text.isEmpty ? 'Kode Pos tidak boleh kosong' : null;
+    });
+
+    if (namaError == null &&
+        emailError == null &&
+        noHpError == null &&
+        alamatError == null &&
+        provinsiError == null &&
+        kodePosError == null) {
+      // Kalau validasi semua sukses, langsung pindah ke halaman Detail
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => DetailPelangganPage(
+            nama: namaController.text,
+            email: emailController.text,
+            noHp: noHpController.text,
+            alamat: alamatController.text,
+            provinsi: provinsiController.text,
+            kodePos: kodePosController.text,
+          ),
+        ),
+      );
+    }
+  }
