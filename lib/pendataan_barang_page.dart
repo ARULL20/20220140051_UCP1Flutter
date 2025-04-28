@@ -108,3 +108,106 @@ void validateForm() {
           },
         ),
       ),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Tanggal Transaksi'),
+              const SizedBox(height: 8),
+              GestureDetector(
+                onTap: () => _selectDate(context),
+                child: AbsorbPointer(
+                  child: TextField(
+                    controller: tanggalController,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.calendar_today),
+                      hintText: 'Tanggal Transaksi',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      errorText: tanggalError,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text('Jenis Transaksi'),
+              const SizedBox(height: 8),
+              DropdownButtonFormField<String>(
+                value: selectedJenisTransaksi,
+                items: ['Masuk', 'Keluar'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                decoration: InputDecoration(
+                  hintText: 'Jenis Transaksi',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  errorText: jenisTransaksiError,
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    selectedJenisTransaksi = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 16),
+              const Text('Jenis Barang'),
+              const SizedBox(height: 8),
+              DropdownButtonFormField<String>(
+                value: selectedJenisBarang,
+                items: ['Carrier', 'Sleeping Bag', 'Tenda', 'Sepatu']
+                    .map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                decoration: InputDecoration(
+                  hintText: 'Jenis Barang',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  errorText: jenisBarangError,
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    selectedJenisBarang = value;
+                    updateHarga();
+                  });
+                },
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Jumlah Barang'),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: jumlahBarangController,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            hintText: 'Jumlah Barang',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            errorText: jumlahBarangError,
+                          ),
+                          onChanged: (value) {
+                            setState(() {
+                              updateHarga();
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
