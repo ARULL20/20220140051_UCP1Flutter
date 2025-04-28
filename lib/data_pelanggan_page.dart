@@ -141,3 +141,26 @@ void resetForm() {
                       ],
                     ),
                   ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('No Hp'),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: noHpController,
+                          keyboardType: TextInputType.phone,
+                          decoration: InputDecoration(
+                            hintText: 'No Hp',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            errorText: noHpError,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
