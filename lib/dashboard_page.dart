@@ -72,3 +72,42 @@ class _DashboardPageState extends State<DashboardPage> {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 50),
+              child: Image.asset('assets/food_banner.jpg'),
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: _menuCard(context, Icons.schedule, 'Data Piket', const PiketGudangPage()),
+                          ),
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: _menuCard(context, Icons.group_add, 'Data Pelanggan', const DataPelangganPage()),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: _menuCard(context, Icons.inventory, 'Barang Masuk/Keluar', const PendataanBarangPage(),
+                          fullWidth: true),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
