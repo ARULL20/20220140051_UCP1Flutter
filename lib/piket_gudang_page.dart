@@ -48,3 +48,10 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
       });
     }
   }
+
+  @override
+  void dispose() {
+    namaController.dispose();
+    tugasController.dispose();
+    super.dispose();
+  }
