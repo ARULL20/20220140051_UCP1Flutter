@@ -207,3 +207,15 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
     return "${namaHari[date.weekday % 7]}, ${date.day} ${namaBulan[date.month - 1]} ${date.year}";
   }
 }
+
+class DetailTugasPage extends StatelessWidget {
+  final String nama;
+  final DateTime tanggal;
+  final String tugas;
+
+  const DetailTugasPage({
+    Key? key,
+    required this.nama,
+    required this.tanggal,
+    required this.tugas,
+  }) : super(key: key);
