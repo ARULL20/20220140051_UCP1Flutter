@@ -57,3 +57,21 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
       );
     }
   }
+
+void resetForm() {
+    setState(() {
+      namaController.clear();
+      emailController.clear();
+      noHpController.clear();
+      alamatController.clear();
+      provinsiController.clear();
+      kodePosController.clear();
+
+      namaError = null;
+      emailError = null;
+      noHpError = null;
+      alamatError = null;
+      provinsiError = null;
+      kodePosError = null;
+    });
+  }
