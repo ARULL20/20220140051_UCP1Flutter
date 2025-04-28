@@ -195,3 +195,15 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
       ),
     );
   }
+
+   String _formatTanggal(DateTime date) {
+    List<String> namaHari = [
+      "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"
+    ];
+    List<String> namaBulan = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    return "${namaHari[date.weekday % 7]}, ${date.day} ${namaBulan[date.month - 1]} ${date.year}";
+  }
+}
