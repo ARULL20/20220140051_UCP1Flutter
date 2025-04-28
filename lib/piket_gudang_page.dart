@@ -88,3 +88,23 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                   errorText: namaError,
                 ),
               ),
+              const SizedBox(height: 16),
+              const Text('Pilih Tanggal'),
+              const SizedBox(height: 8),
+              GestureDetector(
+                onTap: () => _pickDate(context),
+                child: AbsorbPointer(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.calendar_today),
+                      hintText: selectedDate == null
+                          ? 'Pilih Tanggal'
+                          : _formatTanggal(selectedDate!),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      errorText: tanggalError,
+                    ),
+                  ),
+                ),
+              ),
