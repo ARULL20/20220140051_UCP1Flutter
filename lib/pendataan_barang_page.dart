@@ -69,3 +69,28 @@ void validateForm() {
       jenisBarangError = selectedJenisBarang == null ? 'Pilih jenis barang' : null;
       jumlahBarangError = jumlahBarangController.text.isEmpty ? 'Jumlah barang tidak boleh kosong' : null;
     });
+
+ if (tanggalError == null &&
+        jenisTransaksiError == null &&
+        jenisBarangError == null &&
+        jumlahBarangError == null) {
+      // Semua valid, langsung ke halaman detail sukses
+      int hargaPerItem = hargaBarang[selectedJenisBarang!] ?? 0;
+      int jumlah = int.tryParse(jumlahBarangController.text) ?? 1;
+      int totalHarga = hargaPerItem * jumlah;
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => DetailSuksesPage(
+            tanggal: tanggalController.text,
+            jenisTransaksi: selectedJenisTransaksi!,
+            jenisBarang: selectedJenisBarang!,
+            jumlahBarang: jumlah,
+            hargaSatuan: hargaPerItem,
+            totalHarga: totalHarga,
+          ),
+        ),
+      );
+    }
+  }
