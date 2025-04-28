@@ -86,3 +86,36 @@ void resetForm() {
     kodePosController.dispose();
     super.dispose();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        title: const Text('Data Pelanggan'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      backgroundColor: const Color(0xFFFFF5F2),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Nama Cust'),
+              const SizedBox(height: 8),
+              TextField(
+                controller: namaController,
+                decoration: InputDecoration(
+                  hintText: 'Nama Cust',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  errorText: namaError,
+                ),
+              ),
