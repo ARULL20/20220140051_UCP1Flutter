@@ -263,3 +263,35 @@ class DetailTugasPage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: primaryColor,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Center(
+                child: Text(
+                  tugas,
+                  style: const TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _formatTanggal(DateTime date) {
+    List<String> namaHari = [
+      "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"
+    ];
+    List<String> namaBulan = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    return "${namaHari[date.weekday % 7]}, ${date.day} ${namaBulan[date.month - 1]} ${date.year}";
+  }
+}
