@@ -119,3 +119,25 @@ void resetForm() {
                   errorText: namaError,
                 ),
               ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Email'),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: emailController,
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            errorText: emailError,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
