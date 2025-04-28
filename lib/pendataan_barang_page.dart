@@ -61,3 +61,11 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
       hargaSatuanController.text = totalHarga.toString();
     }
   }
+
+void validateForm() {
+    setState(() {
+      tanggalError = tanggalController.text.isEmpty ? 'Tanggal tidak boleh kosong' : null;
+      jenisTransaksiError = selectedJenisTransaksi == null ? 'Pilih jenis transaksi' : null;
+      jenisBarangError = selectedJenisBarang == null ? 'Pilih jenis barang' : null;
+      jumlahBarangError = jumlahBarangController.text.isEmpty ? 'Jumlah barang tidak boleh kosong' : null;
+    });
