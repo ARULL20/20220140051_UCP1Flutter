@@ -29,6 +29,7 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
     'Tenda': 700000,
     'Sepatu': 350000,
   };
+
    Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -41,5 +42,22 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
         tanggalController.text =
             '${pickedDate.day}/${pickedDate.month}/${pickedDate.year}';
       });
+    }
+  }
+
+   @override
+  void dispose() {
+    tanggalController.dispose();
+    jumlahBarangController.dispose();
+    hargaSatuanController.dispose();
+    super.dispose();
+  }
+
+  void updateHarga() {
+    if (selectedJenisBarang != null) {
+      int hargaPerItem = hargaBarang[selectedJenisBarang!] ?? 0;
+      int jumlah = int.tryParse(jumlahBarangController.text) ?? 1;
+      int totalHarga = hargaPerItem * jumlah;
+      hargaSatuanController.text = totalHarga.toString();
     }
   }
