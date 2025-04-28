@@ -16,3 +16,20 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
   String? namaError;
   String? tanggalError;
   String? tugasError;
+
+  final primaryColor = Color.fromARGB(255, 252, 2, 2); // Warna oranye seperti contoh
+
+  Future<void> _pickDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+        tanggalError = null;
+      });
+    }
+  }
