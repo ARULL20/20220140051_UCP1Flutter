@@ -80,3 +80,24 @@ class DetailPelangganPage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text('Kode Pos'),
+                          const SizedBox(height: 8),
+                          TextField(
+                            controller: TextEditingController(text: kodePos),
+                            readOnly: true,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
