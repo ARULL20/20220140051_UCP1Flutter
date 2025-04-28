@@ -75,3 +75,14 @@ void resetForm() {
       kodePosError = null;
     });
   }
+
+   @override
+  void dispose() {
+    namaController.dispose();
+    emailController.dispose();
+    noHpController.dispose();
+    alamatController.dispose();
+    provinsiController.dispose();
+    kodePosController.dispose();
+    super.dispose();
+  }
