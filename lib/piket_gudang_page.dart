@@ -33,3 +33,18 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
       });
     }
   }
+
+  void tambahTugas() {
+    setState(() {
+      namaError = namaController.text.trim().isEmpty ? 'Nama tidak boleh kosong' : null;
+      tanggalError = selectedDate == null ? 'Tanggal harus dipilih' : null;
+      tugasError = tugasController.text.trim().isEmpty ? 'Tugas Piket tidak boleh kosong' : null;
+    });
+
+    if (namaError == null && tanggalError == null && tugasError == null) {
+      setState(() {
+        tugasList.add(tugasController.text.trim());
+        tugasController.clear();
+      });
+    }
+  }
