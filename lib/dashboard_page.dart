@@ -60,3 +60,15 @@ class _DashboardPageState extends State<DashboardPage> {
                       ),
                     ],
                   ),
+                  IconButton(
+                    icon: const Icon(Icons.logout, color: Colors.black),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LoginPage()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
