@@ -75,7 +75,7 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(height: 20),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 50),
-              child: Image.asset('assets/food_banner.jpg'),
+              child: Image.asset('assets/dashboard.png'),
             ),
             const SizedBox(height: 20),
             Expanded(

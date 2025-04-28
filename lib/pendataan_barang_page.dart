@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'DetailSuksesPage.dart'; // Tambahan: import file halaman sukses
+import 'package:ucp1pamlanjut/detailsuksespage.dart';
 
 class PendataanBarangPage extends StatefulWidget {
   const PendataanBarangPage({Key? key}) : super(key: key);

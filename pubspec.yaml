@@ -22,6 +22,7 @@ flutter:
   assets:
     - assets/profil2.jpg
     - assets/food_banner.jpg
+    - assets/dashboard.png
 
   module:
     androidX: true
