@@ -143,7 +143,7 @@ void validateForm() {
               const SizedBox(height: 8),
               DropdownButtonFormField<String>(
                 value: selectedJenisTransaksi,
-                items: ['Masuk', 'Keluar'].map((String value) {
+                items: ['Barang Masuk', 'Barang Keluar'].map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
