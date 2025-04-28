@@ -111,3 +111,36 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
     );
   }
+
+  static Widget _menuCard(BuildContext context, IconData icon, String title, Widget page, {bool fullWidth = false}) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+      },
+      child: Container(
+        width: fullWidth ? double.infinity : null,
+        height: 140, // biar semua kotak tingginya konsisten
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 2, 242, 194),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 48, color: Colors.black),
+            const SizedBox(height: 8),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
