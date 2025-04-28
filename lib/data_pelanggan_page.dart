@@ -164,3 +164,18 @@ void resetForm() {
                   ),
                 ],
               ),
+              const SizedBox(height: 16),
+              const Text('Alamat'),
+              const SizedBox(height: 8),
+              TextField(
+                controller: alamatController,
+                maxLines: 2,
+                decoration: InputDecoration(
+                  hintText: 'Alamat',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  errorText: alamatError,
+                ),
+              ),
+              const SizedBox(height: 16),
