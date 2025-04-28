@@ -219,3 +219,19 @@ class DetailTugasPage extends StatelessWidget {
     required this.tanggal,
     required this.tugas,
   }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final primaryColor = Color.fromARGB(255, 252, 2, 2);
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('Detail $tugas'),
+      ),
