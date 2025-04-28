@@ -6,3 +6,13 @@ class PiketGudangPage extends StatefulWidget {
   @override
   State<PiketGudangPage> createState() => _PiketGudangPageState();
 }
+
+class _PiketGudangPageState extends State<PiketGudangPage> {
+  final TextEditingController namaController = TextEditingController();
+  final TextEditingController tugasController = TextEditingController();
+  DateTime? selectedDate;
+  List<String> tugasList = [];
+
+  String? namaError;
+  String? tanggalError;
+  String? tugasError;
