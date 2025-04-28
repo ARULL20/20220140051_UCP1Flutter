@@ -20,3 +20,10 @@ class _DashboardPageState extends State<DashboardPage> {
     super.initState();
     loadUserData();
   }
+
+  Future<void> loadUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      namaUser = prefs.getString('nama') ?? 'Admin';
+    });
+  }
