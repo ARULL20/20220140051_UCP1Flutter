@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ucp1pamlanjut/dashboard_page.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
