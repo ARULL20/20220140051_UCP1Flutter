@@ -235,3 +235,31 @@ class DetailTugasPage extends StatelessWidget {
         ),
         title: Text('Detail $tugas'),
       ),
+      backgroundColor: const Color(0xFFFFF5F2),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              _formatTanggal(tanggal),
+              style: TextStyle(
+                color: primaryColor,
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  nama,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
