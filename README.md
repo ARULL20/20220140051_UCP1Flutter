@@ -2,8 +2,10 @@
 
 1.Login Page
 ![SS1(TampilanLogin)](https://github.com/user-attachments/assets/ee240c40-2253-438f-a027-f16b4ba49daa)
+
 2.Validasi Login
 ![ss4(validasilogin)](https://github.com/user-attachments/assets/b4a84b3d-b9cb-40de-8d7c-d7f481b14fe2)
+
 3.Registrasi Page
 ![SS2(DaftarAkunBaru)](https://github.com/user-attachments/assets/b8dff8d3-271d-468f-9150-ee20a90c5a3d)
 4.Validasi Registrasi Page
