@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login_page.dart';
+import 'dashboard_page.dart'; // Pastikan path-nya sesuai
+
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -235,13 +237,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   await prefs.setString('password', passwordController.text);
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Registrasi berhasil, silahkan login')),
+                    const SnackBar(content: Text('Registrasi berhasil, Anda Masuk Halaman Dashboard')),
                   );
 
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
-                  );
+                 Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DashboardPage()),
+                );
+
                 },
                 child: const Text('Daftar', style: TextStyle(fontSize: 16)),
               ),
