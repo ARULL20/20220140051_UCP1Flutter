@@ -237,7 +237,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   await prefs.setString('password', passwordController.text);
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Registrasi berhasil, Anda Masuk Halaman Dashboard')),
+                    const SnackBar(content: Text('Registrasi berhasil, Anda Masuk Halaman Utama')),
                   );
 
                  Navigator.pushReplacement(
